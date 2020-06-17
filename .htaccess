@@ -1,0 +1,24 @@
+RewriteEngine on
+
+RewriteRule ^$ index.php?module=home [L]
+RewriteRule home\.html$ index.php?module=home [L]
+RewriteRule ^profil-kami\.html$ index.php?module=profilkami&id=$1 [L]
+RewriteRule ^cara-pembelian\.html$ index.php?module=carabeli&id=$1 [L]
+RewriteRule ^produk-(.*)\.html$ index.php?module=detailproduk&id=$1 [L]
+RewriteRule ^keranjang-(.*)\.html$ index.php?module=keranjangbelanja&id=$1 [L]
+RewriteRule ^selesai-(.*)\.html$ index.php?module=selesaibelanja&id=$1 [L]
+RewriteRule ^kategori-(.*)\.html$ index.php?module=detailkategori&id=$1 [L]
+RewriteRule ^halkategori-([0-9]+)-(.*)\.html$ index.php?module=detailkategori&id=$1&halkategori=$2 [L]
+RewriteRule ^simpan-transaksi\.html$ index.php?module=simpantransaksi&id=$1 [L]
+
+RewriteRule ^semua-produk\.html$ index.php?module=semuaproduk&id=$1 [L]
+RewriteRule ^halproduk-(.*)\.html$ index.php?module=semuaproduk&halproduk=$1 [L]
+RewriteRule ^hasil-pencarian\.html$ index.php?module=hasilcari&id=$1 [L]
+
+RewriteRule ^berita-(.*)-(.*)\.html$ index.php?aliyue=detailberita&id=$1 [L]
+RewriteRule ^indeks-berita\.html$ index.php?aliyue=indeksberita&id=$1 [L]
+RewriteRule ^semua-berita\.html$ index.php?aliyue=semuaberita&id=$1 [L]
+RewriteRule ^halberita-(.*)\.html$ index.php?aliyue=semuaberita&halberita=$1 [L]
+RewriteRule ^kategori-([0-9]+)-(.*)\.html$ index.php?aliyue=detailkategori&id=$1 [L]
+
+Options All -Indexes

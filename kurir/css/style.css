@@ -1,0 +1,26 @@
+
+/* navbar */
+.navbar {
+  margin: 0 0 0 0;
+  padding: 10px 0 10px 0;
+}
+
+
+/* content */
+.content {
+  padding: 50px 0 50px 0;
+  height: 555px;
+}
+
+
+/* footer */
+.footer {
+  background-color: blue;
+  height: 100px;
+}
+
+.footer p {
+  margin-top: 40px;
+  font-size: 20px;
+  color: white;
+}
