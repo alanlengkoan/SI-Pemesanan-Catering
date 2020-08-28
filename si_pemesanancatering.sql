@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 26 Feb 2019 pada 14.53
--- Versi server: 10.1.37-MariaDB
--- Versi PHP: 7.2.12
+-- Host: localhost:3306
+-- Generation Time: 28 Agu 2020 pada 12.50
+-- Versi Server: 10.1.44-MariaDB-0ubuntu0.18.04.1
+-- PHP Version: 7.2.24-0ubuntu0.18.04.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `simresto`
+-- Database: `si_pemesanancatering`
 --
 
 -- --------------------------------------------------------
@@ -47,7 +45,8 @@ INSERT INTO `admins` (`uid`, `username`, `password`, `nama_lengkap`, `email`, `n
 ('1', 'admin', '$2y$10$ISXZSXktGgt2RJWt5MA7y.NjYUsNueHKmcH4d4tn3uuNe.23OGtC.', 'Administrator', 'webmaster@sixghakreasi.com', '08238923848', 'admin', 'N'),
 ('UID-0003', 'yerwin', '$2y$10$FHA6tEKKYWRtoavO2qpife1jmd7j8YLUygKj/7bcb/l0.7mMBoI0O', 'Yerwin Toga Sambolangi', 'yerwin@gmail.com', '2121212', 'user', 'N'),
 ('UID-0002', 'alanlengkoan', '$2y$10$ZOq9h1A/4o6KSE0yFcHTZuyWsKNzaJvBq4W8N0GbeNOA5/WUAUDva', 'Alan Saputra Lengkoan', 'alanlengkoan15@gmail.com', '123123123', 'user', 'N'),
-('UID-0004', 'allen', '$2y$10$3zdxP05zjjUC8k4rrW5/U.zUUjONzFn6wpGPAxG9jED1Auwrc9c6C', 'Alan Lengkoan', 'alanlengkoan15@gmail.com', '121212', 'kurir', 'N');
+('UID-0004', 'allen', '$2y$10$3zdxP05zjjUC8k4rrW5/U.zUUjONzFn6wpGPAxG9jED1Auwrc9c6C', 'Alan Lengkoan', 'alanlengkoan15@gmail.com', '121212', 'kurir', 'N'),
+('UID-0005', 'aaa', '$2y$10$2a.fztaE9wF3KlqkHfUlkOLkOc4j31hGCQi1Glvc1BxiymaNFcvKC', 'Alan Lengkoan', 'alan@gmail.com', '123', 'user', 'N');
 
 -- --------------------------------------------------------
 
@@ -240,70 +239,66 @@ INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `produk_seo`, `
 --
 
 --
--- Indeks untuk tabel `admins`
+-- Indexes for table `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`uid`);
 
 --
--- Indeks untuk tabel `dataimage`
+-- Indexes for table `dataimage`
 --
 ALTER TABLE `dataimage`
   ADD PRIMARY KEY (`id_orders`);
 
 --
--- Indeks untuk tabel `hubungi`
+-- Indexes for table `hubungi`
 --
 ALTER TABLE `hubungi`
   ADD PRIMARY KEY (`id_hubungi`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id_orders`);
 
 --
--- Indeks untuk tabel `orders_temp`
+-- Indexes for table `orders_temp`
 --
 ALTER TABLE `orders_temp`
   ADD PRIMARY KEY (`id_orders_temp`);
 
 --
--- Indeks untuk tabel `produk`
+-- Indexes for table `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `hubungi`
+-- AUTO_INCREMENT for table `hubungi`
 --
 ALTER TABLE `hubungi`
   MODIFY `id_hubungi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
 --
--- AUTO_INCREMENT untuk tabel `orders_temp`
+-- AUTO_INCREMENT for table `orders_temp`
 --
 ALTER TABLE `orders_temp`
-  MODIFY `id_orders_temp` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
-
+  MODIFY `id_orders_temp` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
