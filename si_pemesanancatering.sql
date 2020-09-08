@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: 28 Agu 2020 pada 12.50
+-- Generation Time: 08 Sep 2020 pada 19.51
 -- Versi Server: 10.1.44-MariaDB-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.6
 
@@ -42,7 +42,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`uid`, `username`, `password`, `nama_lengkap`, `email`, `no_telp`, `level`, `blokir`) VALUES
-('1', 'admin', '$2y$10$ISXZSXktGgt2RJWt5MA7y.NjYUsNueHKmcH4d4tn3uuNe.23OGtC.', 'Administrator', 'webmaster@sixghakreasi.com', '08238923848', 'admin', 'N'),
+('1', 'admin', '$2y$10$.bnvHSxnWHSdvvvcb1pkPOCYSM6xv4Ocd5vO63VQCgRb11jgAMzxG', 'Administrator', 'webmaster@sixghakreasi.com', '08238923848', 'admin', 'N'),
 ('UID-0003', 'yerwin', '$2y$10$FHA6tEKKYWRtoavO2qpife1jmd7j8YLUygKj/7bcb/l0.7mMBoI0O', 'Yerwin Toga Sambolangi', 'yerwin@gmail.com', '2121212', 'user', 'N'),
 ('UID-0002', 'alanlengkoan', '$2y$10$ZOq9h1A/4o6KSE0yFcHTZuyWsKNzaJvBq4W8N0GbeNOA5/WUAUDva', 'Alan Saputra Lengkoan', 'alanlengkoan15@gmail.com', '123123123', 'user', 'N'),
 ('UID-0004', 'allen', '$2y$10$3zdxP05zjjUC8k4rrW5/U.zUUjONzFn6wpGPAxG9jED1Auwrc9c6C', 'Alan Lengkoan', 'alanlengkoan15@gmail.com', '121212', 'kurir', 'N'),
@@ -72,7 +72,8 @@ CREATE TABLE `dataimage` (
 --
 
 INSERT INTO `dataimage` (`id_orders`, `uid`, `nama`, `transfer`, `sisah`, `bank`, `no_rek`, `status_pembayaran`, `image`, `image2`) VALUES
-('ODR-0001', 'UID-0002', 'Alan Lengkoan', '25000', '0', '22', '22', 'Lunas', '120px-Home_Icon.svg.png', 'Academic-Calendar-icon.png');
+('ODR-0001', 'UID-0002', 'Alan Lengkoan', '25000', '0', '22', '22', 'Lunas', '120px-Home_Icon.svg.png', 'Academic-Calendar-icon.png'),
+('ODR-0002', 'UID-0005', 'sdad', '20000', '0', '11', '11', 'Lunas', 'D00doPGVYAUN8I8.jpg_large', 'Leaderboards-·-WakaTime-Programming-and-time-track');
 
 -- --------------------------------------------------------
 
@@ -143,7 +144,12 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id_orders`, `uid`, `nama_kustomer`, `alamat`, `telpon`, `email`, `status_order`, `status_pembayaran`, `jam_p`, `tgl_p`, `tgl_order`, `jam_order`) VALUES
-('ODR-0001', 'UID-0002', 'Alan Saputra Lengkoan', 'asdas', '123123123', 'alanlengkoan15@gmail.com', 'Lunas', 'Lunas', '22:16:46', '2019-01-07', '2019-01-07', '23:04:40');
+('ODR-0001', 'UID-0002', 'Alan Saputra Lengkoan', 'asdas', '123123123', 'alanlengkoan15@gmail.com', 'Lunas', 'Lunas', '22:16:46', '2019-01-07', '2019-01-07', '23:04:40'),
+('ODR-0002', 'UID-0005', 'Alan Lengkoan', 'test', '123', 'alan@gmail.com', 'Lunas', 'Lunas', '13:13:00', '2020-08-28', '2020-08-28', '13:13:40'),
+('ODR-0003', 'UID-0005', 'Alan Lengkoan', 'asa', '123', 'alan@gmail.com', 'Panjar', 'Panjar', '12:12:00', '2020-08-29', '2020-08-29', '22:53:04'),
+('ODR-0004', 'UID-0005', 'Alan Lengkoan', 'zsdas', '123', 'alan@gmail.com', 'Baru', 'M', '23:40:00', '2020-08-29', '2020-08-29', '23:40:29'),
+('ODR-0005', 'UID-0005', 'Alan Lengkoan', 'test', '123', 'alan@gmail.com', 'Baru', 'M', '11:17:00', '2020-08-30', '2020-08-30', '11:17:32'),
+('ODR-0006', 'UID-0005', 'Alan Lengkoan', 'test', '123', 'alan@gmail.com', 'Baru', 'M', '15:02:00', '2020-08-30', '2020-08-30', '15:02:44');
 
 --
 -- Trigger `orders`
@@ -177,7 +183,12 @@ CREATE TABLE `orders_detail` (
 
 INSERT INTO `orders_detail` (`id_orders`, `id_produk`, `jumlah`, `harga`, `total`, `transfer`, `sisah`) VALUES
 ('ODR-0001', 'PDR-0002', 1, '15000', '25000', '25000', '0'),
-('ODR-0001', 'PDR-0004', 1, '10000', '25000', '25000', '0');
+('ODR-0001', 'PDR-0004', 1, '10000', '25000', '25000', '0'),
+('ODR-0002', 'PDR-0001', 1, '20000', '20000', '20000', '0'),
+('ODR-0003', 'PDR-0002', 1, '15000', '15000', '', ''),
+('ODR-0004', 'PDR-0002', 1, '15000', '15000', '', ''),
+('ODR-0005', 'PDR-0002', 1, '15000', '15000', '', ''),
+('ODR-0006', 'PDR-0002', 1, '15000', '15000', '', '');
 
 -- --------------------------------------------------------
 
@@ -202,7 +213,10 @@ CREATE TABLE `orders_temp` (
 
 INSERT INTO `orders_temp` (`id_orders_temp`, `id_produk`, `id_session`, `jumlah`, `harga`, `tgl_order_temp`, `jam_order_temp`, `stok_temp`) VALUES
 (1, 'PDR-0002', 'rj65i58kd65jnpr4m176fm1onu', 1, '15000', '2019-01-07', '15:42:52', 9),
-(2, 'PDR-0004', 'rj65i58kd65jnpr4m176fm1onu', 1, '10000', '2019-01-07', '15:43:02', 9);
+(2, 'PDR-0004', 'rj65i58kd65jnpr4m176fm1onu', 1, '10000', '2019-01-07', '15:43:02', 9),
+(4, 'PDR-0001', 'jreqpe8kl9pmbq4e43egjbr6sn', 1, '20000', '2020-08-28', '13:13:22', 8),
+(6, 'PDR-0002', 'p02jeh1q05lhffnhhks2fnaidv', 1, '15000', '2020-08-29', '21:35:32', 8),
+(7, 'PDR-0002', 'sv3l2c0n5gfg578msjudadpt1g', 1, '15000', '2020-08-30', '11:17:13', 8);
 
 -- --------------------------------------------------------
 
@@ -229,10 +243,10 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `produk_seo`, `deskripsi`, `harga_p`, `stok`, `berat`, `tgl_masuk`, `gambar`, `dibeli`) VALUES
-('PDR-0001', 15, 'Nasi Goreng', 'nasi-goreng', '<p>enak kali</p>', 20000, 8, '0.00', '2018-12-06', '83nasgor.jpg', 27),
-('PDR-0002', 15, 'Mie Goreng', 'mie-goreng', '<p>Mantap Kali</p>', 15000, 8, '0.00', '2018-12-06', '52miegor.jpg', 27),
-('PDR-0003', 16, 'Es Teh', 'es-teh', '<p>mantap</p>', 5000, 8, '0.00', '2018-12-06', '53esteh.jpg', 27),
-('PDR-0004', 16, 'Es Buah', 'es-buah', '<p>segar</p>', 10000, 8, '0.00', '2018-12-06', '98esbuah.jpg', 27);
+('PDR-0001', 15, 'Nasi Goreng', 'nasi-goreng', '<p>enak kali</p>', 20000, 7, '0.00', '2018-12-06', '83nasgor.jpg', 28),
+('PDR-0002', 15, 'Mie Goreng', 'mie-goreng', '<p>Mantap Kali</p>', 15000, 7, '0.00', '2018-12-06', '52miegor.jpg', 28),
+('PDR-0003', 16, 'Es Teh', 'es-teh', '<p>mantap</p>', 5000, 7, '0.00', '2018-12-06', '53esteh.jpg', 28),
+('PDR-0004', 16, 'Es Buah', 'es-buah', '<p>segar</p>', 10000, 7, '0.00', '2018-12-06', '98esbuah.jpg', 28);
 
 --
 -- Indexes for dumped tables
@@ -298,7 +312,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `orders_temp`
 --
 ALTER TABLE `orders_temp`
-  MODIFY `id_orders_temp` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_orders_temp` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
