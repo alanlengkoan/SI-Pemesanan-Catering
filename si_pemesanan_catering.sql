@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: 08 Sep 2020 pada 19.51
--- Versi Server: 10.1.44-MariaDB-0ubuntu0.18.04.1
--- PHP Version: 7.2.24-0ubuntu0.18.04.6
+-- Host: localhost
+-- Generation Time: Aug 28, 2022 at 06:01 PM
+-- Server version: 5.7.24
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `si_pemesanancatering`
+-- Database: `si_pemesanan_catering`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admins`
+-- Table structure for table `admins`
 --
 
 CREATE TABLE `admins` (
@@ -38,20 +39,16 @@ CREATE TABLE `admins` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data untuk tabel `admins`
+-- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`uid`, `username`, `password`, `nama_lengkap`, `email`, `no_telp`, `level`, `blokir`) VALUES
-('1', 'admin', '$2y$10$.bnvHSxnWHSdvvvcb1pkPOCYSM6xv4Ocd5vO63VQCgRb11jgAMzxG', 'Administrator', 'webmaster@sixghakreasi.com', '08238923848', 'admin', 'N'),
-('UID-0003', 'yerwin', '$2y$10$FHA6tEKKYWRtoavO2qpife1jmd7j8YLUygKj/7bcb/l0.7mMBoI0O', 'Yerwin Toga Sambolangi', 'yerwin@gmail.com', '2121212', 'user', 'N'),
-('UID-0002', 'alanlengkoan', '$2y$10$ZOq9h1A/4o6KSE0yFcHTZuyWsKNzaJvBq4W8N0GbeNOA5/WUAUDva', 'Alan Saputra Lengkoan', 'alanlengkoan15@gmail.com', '123123123', 'user', 'N'),
-('UID-0004', 'allen', '$2y$10$3zdxP05zjjUC8k4rrW5/U.zUUjONzFn6wpGPAxG9jED1Auwrc9c6C', 'Alan Lengkoan', 'alanlengkoan15@gmail.com', '121212', 'kurir', 'N'),
-('UID-0005', 'aaa', '$2y$10$2a.fztaE9wF3KlqkHfUlkOLkOc4j31hGCQi1Glvc1BxiymaNFcvKC', 'Alan Lengkoan', 'alan@gmail.com', '123', 'user', 'N');
+('1', 'admin', '$2y$10$.bnvHSxnWHSdvvvcb1pkPOCYSM6xv4Ocd5vO63VQCgRb11jgAMzxG', 'Administrator', 'webmaster@sixghakreasi.com', '08238923848', 'admin', 'N');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dataimage`
+-- Table structure for table `dataimage`
 --
 
 CREATE TABLE `dataimage` (
@@ -67,18 +64,10 @@ CREATE TABLE `dataimage` (
   `image2` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `dataimage`
---
-
-INSERT INTO `dataimage` (`id_orders`, `uid`, `nama`, `transfer`, `sisah`, `bank`, `no_rek`, `status_pembayaran`, `image`, `image2`) VALUES
-('ODR-0001', 'UID-0002', 'Alan Lengkoan', '25000', '0', '22', '22', 'Lunas', '120px-Home_Icon.svg.png', 'Academic-Calendar-icon.png'),
-('ODR-0002', 'UID-0005', 'sdad', '20000', '0', '11', '11', 'Lunas', 'D00doPGVYAUN8I8.jpg_large', 'Leaderboards-·-WakaTime-Programming-and-time-track');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `hubungi`
+-- Table structure for table `hubungi`
 --
 
 CREATE TABLE `hubungi` (
@@ -90,17 +79,10 @@ CREATE TABLE `hubungi` (
   `tanggal` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
---
--- Dumping data untuk tabel `hubungi`
---
-
-INSERT INTO `hubungi` (`id_hubungi`, `nama`, `email`, `subjek`, `pesan`, `tanggal`) VALUES
-(1, 'Alan Lengkoan', 'alanlengkoan15@gmail.com', 'asd', 'asdasdajhsgdhvf sgf sdfjh akjshfb', '2018-12-08');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -110,7 +92,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `kategori_seo`) VALUES
@@ -121,7 +103,7 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `kategori_seo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -140,19 +122,7 @@ CREATE TABLE `orders` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data untuk tabel `orders`
---
-
-INSERT INTO `orders` (`id_orders`, `uid`, `nama_kustomer`, `alamat`, `telpon`, `email`, `status_order`, `status_pembayaran`, `jam_p`, `tgl_p`, `tgl_order`, `jam_order`) VALUES
-('ODR-0001', 'UID-0002', 'Alan Saputra Lengkoan', 'asdas', '123123123', 'alanlengkoan15@gmail.com', 'Lunas', 'Lunas', '22:16:46', '2019-01-07', '2019-01-07', '23:04:40'),
-('ODR-0002', 'UID-0005', 'Alan Lengkoan', 'test', '123', 'alan@gmail.com', 'Lunas', 'Lunas', '13:13:00', '2020-08-28', '2020-08-28', '13:13:40'),
-('ODR-0003', 'UID-0005', 'Alan Lengkoan', 'asa', '123', 'alan@gmail.com', 'Panjar', 'Panjar', '12:12:00', '2020-08-29', '2020-08-29', '22:53:04'),
-('ODR-0004', 'UID-0005', 'Alan Lengkoan', 'zsdas', '123', 'alan@gmail.com', 'Baru', 'M', '23:40:00', '2020-08-29', '2020-08-29', '23:40:29'),
-('ODR-0005', 'UID-0005', 'Alan Lengkoan', 'test', '123', 'alan@gmail.com', 'Baru', 'M', '11:17:00', '2020-08-30', '2020-08-30', '11:17:32'),
-('ODR-0006', 'UID-0005', 'Alan Lengkoan', 'test', '123', 'alan@gmail.com', 'Baru', 'M', '15:02:00', '2020-08-30', '2020-08-30', '15:02:44');
-
---
--- Trigger `orders`
+-- Triggers `orders`
 --
 DELIMITER $$
 CREATE TRIGGER `delete` AFTER DELETE ON `orders` FOR EACH ROW begin
@@ -164,7 +134,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `orders_detail`
+-- Table structure for table `orders_detail`
 --
 
 CREATE TABLE `orders_detail` (
@@ -177,23 +147,10 @@ CREATE TABLE `orders_detail` (
   `sisah` varchar(20) COLLATE latin1_general_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
---
--- Dumping data untuk tabel `orders_detail`
---
-
-INSERT INTO `orders_detail` (`id_orders`, `id_produk`, `jumlah`, `harga`, `total`, `transfer`, `sisah`) VALUES
-('ODR-0001', 'PDR-0002', 1, '15000', '25000', '25000', '0'),
-('ODR-0001', 'PDR-0004', 1, '10000', '25000', '25000', '0'),
-('ODR-0002', 'PDR-0001', 1, '20000', '20000', '20000', '0'),
-('ODR-0003', 'PDR-0002', 1, '15000', '15000', '', ''),
-('ODR-0004', 'PDR-0002', 1, '15000', '15000', '', ''),
-('ODR-0005', 'PDR-0002', 1, '15000', '15000', '', ''),
-('ODR-0006', 'PDR-0002', 1, '15000', '15000', '', '');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `orders_temp`
+-- Table structure for table `orders_temp`
 --
 
 CREATE TABLE `orders_temp` (
@@ -207,21 +164,10 @@ CREATE TABLE `orders_temp` (
   `stok_temp` int(5) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
---
--- Dumping data untuk tabel `orders_temp`
---
-
-INSERT INTO `orders_temp` (`id_orders_temp`, `id_produk`, `id_session`, `jumlah`, `harga`, `tgl_order_temp`, `jam_order_temp`, `stok_temp`) VALUES
-(1, 'PDR-0002', 'rj65i58kd65jnpr4m176fm1onu', 1, '15000', '2019-01-07', '15:42:52', 9),
-(2, 'PDR-0004', 'rj65i58kd65jnpr4m176fm1onu', 1, '10000', '2019-01-07', '15:43:02', 9),
-(4, 'PDR-0001', 'jreqpe8kl9pmbq4e43egjbr6sn', 1, '20000', '2020-08-28', '13:13:22', 8),
-(6, 'PDR-0002', 'p02jeh1q05lhffnhhks2fnaidv', 1, '15000', '2020-08-29', '21:35:32', 8),
-(7, 'PDR-0002', 'sv3l2c0n5gfg578msjudadpt1g', 1, '15000', '2020-08-30', '11:17:13', 8);
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produk`
+-- Table structure for table `produk`
 --
 
 CREATE TABLE `produk` (
@@ -239,7 +185,7 @@ CREATE TABLE `produk` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
--- Dumping data untuk tabel `produk`
+-- Dumping data for table `produk`
 --
 
 INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `produk_seo`, `deskripsi`, `harga_p`, `stok`, `berat`, `tgl_masuk`, `gambar`, `dibeli`) VALUES
@@ -303,16 +249,20 @@ ALTER TABLE `produk`
 --
 ALTER TABLE `hubungi`
   MODIFY `id_hubungi` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
 -- AUTO_INCREMENT for table `orders_temp`
 --
 ALTER TABLE `orders_temp`
-  MODIFY `id_orders_temp` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_orders_temp` int(5) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
